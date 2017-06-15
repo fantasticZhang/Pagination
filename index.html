@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pagination</title>
+    <link rel="stylesheet" type="text/css" href="css/pagination.css" />
+</head>
+<body>
+<div class="pagination"></div>
+
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/pagination.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".pagination").pagination(300, {
+            currentPage :0,
+            itemsPerPage :15,
+            displayMsg :true,
+            displaySkip: true,
+            callback :function (pageId,pagePanel) {
+                pageId++;
+                console.log("当前是第 "+ pageId+ " 页");
+            }
+        });
+    })
+</script>
+</body>
+</html>
